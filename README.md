@@ -23,25 +23,43 @@ maintenance-gateway:80
 
 ## Start
 
+Vào thư mục project trước:
+
+```bash
+cd ~/maintenance-gateway
+```
+
+Sau đó:
+
 ```bash
 docker-compose up -d
 ```
 
 ## Maintenance
 
+> Tất cả các lệnh bên dưới phải được chạy trong thư mục `~/maintenance-gateway`.
+
 ### Bật maintenance
 
 ```bash
+cd ~/maintenance-gateway
+
 cp nginx/nginx-on.conf runtime/default.conf
+
 docker exec maintenance-gateway nginx -t
+
 docker exec maintenance-gateway nginx -s reload
 ```
 
 ### Tắt maintenance
 
 ```bash
+cd ~/maintenance-gateway
+
 cp nginx/nginx-off.conf runtime/default.conf
+
 docker exec maintenance-gateway nginx -t
+
 docker exec maintenance-gateway nginx -s reload
 ```
 
