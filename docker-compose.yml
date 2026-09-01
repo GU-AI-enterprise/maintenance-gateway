@@ -1,0 +1,16 @@
+services:
+  maintenance-gateway:
+    image: nginx:alpine
+    container_name: maintenance-gateway
+    restart: unless-stopped
+
+    networks:
+      - guai-enterprise_default
+
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+      - ./runtime:/etc/nginx/conf.d:ro
+
+networks:
+  guai-enterprise_default:
+    external: true
