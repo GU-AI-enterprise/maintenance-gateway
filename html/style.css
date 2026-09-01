@@ -16,3 +16,21 @@ body {
 .maintenance {
     text-align: center;
 }
+
+.maintenance-graphic {
+    margin-bottom: 24px;
+}
+
+.maintenance-image {
+    width: 480px;
+    max-width: 92%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .maintenance-image {
+        width: 720px;
+    }
+}
