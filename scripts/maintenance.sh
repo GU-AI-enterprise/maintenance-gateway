@@ -4,7 +4,7 @@ set -e
 
 BASE="$(cd "$(dirname "$0")/.." && pwd)"
 
-COMPOSE="docker compose -f $BASE/docker-compose.yml"
+COMPOSE="docker-compose -f $BASE/docker-compose.yml"
 RUNTIME="$BASE/runtime"
 
 case "$1" in
